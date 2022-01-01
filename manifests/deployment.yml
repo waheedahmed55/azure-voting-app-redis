@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: waheedahmedazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: waheedahmedazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: waheedahmedazurevotingappredis 
+    spec:
+      containers:
+        - name: waheedahmedazurevotingappredis 
+          image: myapp01acr.azurecr.io/waheedahmedazurevotingappredis
+          ports:
+          - containerPort: 8081
